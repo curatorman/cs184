@@ -24,7 +24,7 @@ body{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    margin-left: 150px;
+    margin-left: 100px;
 }
 
 #nav_item a:hover {
@@ -33,6 +33,10 @@ body{
 
 .clear{
 	clear: both;
+}
+
+.active{
+	background-color: #111;
 }
 /* SHARED */
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -79,7 +83,7 @@ body{
 }
 
 #direct:hover{
-	color: orange;
+	color: gray;
 	font-weight: bold;
 }
 #as1_image{
@@ -175,7 +179,9 @@ body{
 }
 
 #description{
-	padding: 10px;
+	padding: 20px;
+	/*padding-left: 300px;*/
+
 }
 
 .assignment_title{
@@ -198,16 +204,21 @@ body{
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 /*AS1*/
 
+#as0_image{
+	width: 550px;
+	height: 500px;
+	margin-left: 10%;
+}
 #as_title{
-	padding-left: 200px;
-	padding-top: 20px;
+	margin-left: 200px;
+	padding-top: 40px;
 	font-family: Bungee Inline;
 	font-size: 44px;
 }
 
 #as_description{
 	margin-left: 200px;
-	width: 1000px;
+	width: 800px;
 	padding: 10px;
 }
 
@@ -219,9 +230,14 @@ body{
 }
 
 #toc_description{
-	margin-left: 200px;
+	margin-left: 175px;
 	width: 700px;
-	padding: 10px;
+	/*padding: 10px;*/
+}
+
+#toc_description a:hover{
+	color: #444444;
+	font-weight: bold;
 }
 
 #toc_list{
