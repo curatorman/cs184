@@ -1,32 +1,22 @@
 $(document).ready(function() {
-	$(".index_image").addClass("load"); //
-	$(".title_box").addClass("load");
-    
-
-    var scrollHeight = jQuery(window).height();
-    console.log(scrollHeight);
-    $(".as_image_indiv_container_left").each(function(){
-        var thisPos = $(this).offset().top;
-        var topOfWindow = $(window).scrollTop();
-        var diff = topOfWindow + scrollHeight - 220;
-        if (diff > thisPos) {
-            $(this).addClass("show_image");
-        }
-        else{
-            $(this).removeClass("show_image");
-        }
-    });
-    $(".as_image_indiv_container_right").each(function(){
-        var thisPos = $(this).offset().top;
-        var topOfWindow = $(window).scrollTop();
-        var diff = topOfWindow + scrollHeight - 220;
-        if (diff > thisPos) {
-            $(this).addClass("show_image");
-        }
-        else{
-            $(this).removeClass("show_image");
-        }
-    });
+    function show_image(elem) {
+        var scrollHeight = jQuery(window).height();
+        $(elem).each(function(){
+            var currPos = $(this).offset().top;
+            var top = $(window).scrollTop();
+            var diff = top + scrollHeight - 220;
+            if (diff > currPos) {
+                $(this).addClass("show_image");
+            }
+            else{
+                $(this).removeClass("show_image");
+            }
+        });
+    }
+    show_image(".as_image_indiv_container_left");
+    show_image(".as_image_indiv_container_right");
+    $(".index_image").addClass("load");
+    $(".title_box").addClass("load");
 
      $(window).scroll(function() {
 		if($(window).scrollTop() + $(window).height() + 30 > $(document).height()) {
@@ -37,42 +27,7 @@ $(document).ready(function() {
 			$("#scroll_arrow").fadeIn();
 			$("#scroll_message").fadeIn();
 		}
-
-     	var scrollHeight = jQuery(window).height();
-     	console.log(scrollHeight);
-        $(".as_image_indiv_container_left").each(function(){
-            var thisPos = $(this).offset().top;
-            var topOfWindow = $(window).scrollTop();
-            var diff = topOfWindow + scrollHeight - 220;
-            if (diff > thisPos) {
-                $(this).addClass("show_image");
-            }
-            else{
-            	$(this).removeClass("show_image");
-            }
-        });
-        $(".as_image_indiv_container_right").each(function(){
-            var thisPos = $(this).offset().top;
-            var topOfWindow = $(window).scrollTop();
-            var diff = topOfWindow + scrollHeight - 220;
-            if (diff > thisPos) {
-                $(this).addClass("show_image");
-            }
-            else{
-            	$(this).removeClass("show_image");
-            }
-        });
-
-        // $("#scroll_message").each(function(){
-        //     var thisPos = $(this).offset().top;
-        //     var topOfWindow = $(window).scrollTop();
-        //     var diff = topOfWindow + windowHeight - 1400;
-        //     if (diff > thisPos) {
-        //         $(this).addClass("show_image");
-        //     }
-        //     else{
-        //     	$(this).removeClass("show_image");
-        //     }
-        // });
+     	show_image(".as_image_indiv_container_left");
+        show_image(".as_image_indiv_container_right");
     });
 });
