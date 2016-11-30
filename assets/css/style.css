@@ -1,10 +1,11 @@
 /* SHARED */
 /* TODO: change all titles to have a title class that defines the font and size */
+/* generally to just clean stuff up and make it more concise */
 body{
 	margin: 0px;
 	font-family: Open Sans;
+	background-color: #dddddd;
 }
-
 
 #topnav {
     list-style-type: none;
@@ -14,11 +15,11 @@ body{
     background-color: #333;
 }
 
-#nav_item {
+.nav_item {
 	float: left;
 }
 
-#nav_item a {
+.nav_item a {
 	display: block;
     color: white;
     text-align: center;
@@ -27,7 +28,7 @@ body{
     margin-left: 100px;
 }
 
-#nav_item a:hover {
+.nav_item a:hover {
     background-color: #111;
 }
 
@@ -37,6 +38,10 @@ body{
 
 .active{
 	background-color: #111;
+}
+
+#home_nav{
+	margin-left: 100px;
 }
 /* SHARED */
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -74,17 +79,23 @@ body{
 #index_title2{
 	font-family: Bungee Inline;
 	font-size: 44px;
+	margin-bottom: 15px;
 }
 
 #direct{
+	padding: 7px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #229954;
+	border-radius: 10px;
 	font-size: 20px;
 	text-decoration: none;
 	color: white;
 }
 
 #direct:hover{
-	color: gray;
-	font-weight: bold;
+	color: #dddddd;
+	background-color: #1E8449;
 }
 #as1_image{
 	position: absolute;
@@ -129,7 +140,7 @@ body{
 	width: 100%;
 	height: 1000px;
 	margin: 0 auto;
-	/*background-color: #dddddd;*/
+	background-color: #dddddd;
 }
 
 #main_title{
@@ -163,7 +174,7 @@ body{
 }
 
 .main_image:hover{
-	filter: blur(5px);
+	opacity: 0.5;
 }
 
 .assignment_link{
@@ -312,12 +323,10 @@ body{
 	bottom: 8%;
 	left: 50%;
 	transform: translateX(-50%);
-	/*animation: text 2s infinite;*/
 }
 
 #scroll_arrow {
 	position: fixed;
-	/*top: 0;*/
 	left: 50%;
 	bottom: 5%;
 	width: 24px;
