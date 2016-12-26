@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="CS184 Website">
+    <meta name="author" content="Favian Ho">
+
+    <!-- Insert Favicon later -->
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>Favian Ho</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Favian Ho</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="assignment0.html">Assignment 0</a></li>
+            <li><a href="assignment1.html">Assignment 1</a></li>
+            <li><a href="assignment2.html">Assignment 2</a></li>
+            <li class="active"><a href="assignment3.html">Assignment 3</a></li>
+            <li><a href="assignment4.html">Assignment 4</a></li>
+            <!-- <li><a href="#Projects">Projects</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <br><br>
+      <h1> Assignment 3: Bezier Surfaces </h1>
+      <h3> Group Members: </h3>
+      <h5> Caleb Chuck (aaf) and Favian Ho (aby)</h5>
+      <h3> Given Bez Files </h3>
+      <a href="#arch"> Arch </a><br>
+      <a href="#teacup"> Teacup </a><br>
+      <a href="#teapot"> Teapot </a><br>
+      <h3> Extra features </h3>
+      <a href="#obj"> Reading obj files</a><br>
+      <a href="#animation"> Animation </a><br>
+      <a href="#morph"> Morphing objects into other objects</a><br>
+      <a href="#multi"> Multiple Objects in a Scene</a><br>
+      <a href="#write_obj"> Writing to a .obj file</a><br>
+      Here are the input files we used for this project: <br>
+      <a href="as3files/arch.bez">arch.bez</a>
+      <a href="as3files/teacup.bez">teacup.bez</a>
+      <a href="as3files/teapot.bez">teapot.bez</a>
+      <a href="as3files/airboat.obj">airboat.obj</a>
+      <a href="as3files/sandal.obj">sandal.obj</a>
+      <a href="as3files/cessna.obj">cessna.obj</a>
+      <a href="as3files/gourd.obj">gourd.obj</a>
+
+      <div class="starter-template">
+
+        <a name="arch"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Arch with Uniform Tessellation</h1>
+          <h3>Command: ./as3 ../inputfiles/arch.bez 0.1</h3>
+          <br>
+          <h4>Wireframe View</h4>
+          <img src="pictures/as3/image_01.png" width="500px" height="500px">
+          <div class="description"> This image shows the arch with uniform tessellation in wireframe mode </div>
+          <br>
+          <h4>Smooth Shading</h4>
+          <img src="pictures/as3/image_02.png" width="500px" height="500px">
+          <div class="description"> This image shows the arch with uniform tessellation and smooth shading </div>
+          <br>
+          <h4>Flat Shading</h4>
+          <img src="pictures/as3/image_03.png" width="500px" height="500px">
+          <div class="description"> This image shows the arch with uniform tessellation and flat shading </div>
+          <br>
+
+          <h1>Arch with Adaptive Tessellation</h1>
+          <h3>Command: ./as3 ../inputfiles/arch.bez 0.05 -a</h3>
+          <br>
+          <h4>Wireframe View</h4>
+          <img src="pictures/as3/image_04.png" width="500px" height="500px">
+          <div class="description"> This image shows the arch with triangular tessellation in wireframe mode </div>
+          <br>
+          <h4>Smooth Shading</h4>
+          <img src="pictures/as3/image_05.png" width="500px" height="500px">
+          <div class="description"> This image shows the arch with triangular tessellation and smooth shading </div>
+          <br>
+          <h4>Flat Shading</h4>
+          <img src="pictures/as3/image_06.png" width="500px" height="500px">
+          <div class="description"> This image shows the arch with triangular tessellation and flat shading </div>
+          <br>
+          <br><br><a href="assignment3.html"> [Back to top] </a>
+        </div>
+
+        <a name="teacup"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Teacup with Uniform Tessellation</h1>
+          <h3>Command: ./as3 ../inputfiles/teacup.bez 0.1</h3>
+          <br>
+          <h4>Wireframe View</h4>
+          <img src="pictures/as3/image_07.png" width="500px" height="500px">
+          <div class="description"> This image shows the teacup with uniform tessellation in wireframe mode </div>
+          <br>
+          <h4>Smooth Shading</h4>
+          <img src="pictures/as3/image_08.png" width="500px" height="500px">
+          <div class="description"> This image shows the teacup with uniform tessellation and smooth shading </div>
+          <br>
+          <h4>Flat Shading</h4>
+          <img src="pictures/as3/image_09.png" width="500px" height="500px">
+          <div class="description"> This image shows the teacup with uniform tessellation and flat shading </div>
+          <br>
+
+          <h1>Teacup with Adaptive Tessellation</h1>
+          <h3>Command: ./as3 ../inputfiles/teacup.bez 0.01 -a</h3>
+          <br>
+          <h4>Wireframe View</h4>
+          <img src="pictures/as3/image_10.png" width="500px" height="500px">
+          <div class="description"> This image shows the teacup with triangular tessellation in wireframe mode </div>
+          <br>
+          <h4>Smooth Shading</h4>
+          <img src="pictures/as3/image_11.png" width="500px" height="500px">
+          <div class="description"> This image shows the teacup with triangular tessellation and smooth shading </div>
+          <br>
+          <h4>Flat Shading</h4>
+          <img src="pictures/as3/image_12.png" width="500px" height="500px">
+          <div class="description"> This image shows the teacup with triangular tessellation and flat shading </div>
+          <br>
+          <br><br><a href="assignment3.html"> [Back to top] </a>
+        </div>
+
+        <a name="teapot"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Teapot with Uniform Tessellation</h1>
+          <h3>Command: ./as3 ../inputfiles/teapot.bez 0.1</h3>
+          <br>
+          <h4>Wireframe View</h4>
+          <img src="pictures/as3/image_13.png" width="500px" height="500px">
+          <div class="description"> This image shows the teapot with uniform tessellation in wireframe mode </div>
+          <br>
+          <h4>Smooth Shading</h4>
+          <img src="pictures/as3/image_14.png" width="500px" height="500px">
+          <div class="description"> This image shows the teapot with uniform tessellation and smooth shading </div>
+          <br>
+          <h4>Flat Shading</h4>
+          <img src="pictures/as3/image_15.png" width="500px" height="500px">
+          <div class="description"> This image shows the teapot with uniform tessellation and flat shading </div>
+          <br>
+
+          <h1>Teapot with Adaptive Tessellation</h1>
+          <h3>Command: ./as3 ../inputfiles/teapot.bez 0.01 -a</h3>
+          <br>
+          <h4>Wireframe View</h4>
+          <img src="pictures/as3/image_16.png" width="500px" height="500px">
+          <div class="description"> This image shows the teapot with triangular tessellation in wireframe mode </div>
+          <br>
+          <h4>Smooth Shading</h4>
+          <img src="pictures/as3/image_17.png" width="500px" height="500px">
+          <div class="description"> This image shows the teapot with triangular tessellation and smooth shading </div>
+          <br>
+          <h4>Flat Shading</h4>
+          <img src="pictures/as3/image_18.png" width="500px" height="500px">
+          <div class="description"> This image shows the teapot with triangular tessellation and flat shading </div>
+          <br>
+          <br><br><a href="assignment3.html"> [Back to top] </a>
+        </div>
+
+        <a name="obj"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Reading an Airboat obj file</h1>
+          <h3>Command: ./as3 ../inputfiles/airboat.obj</h3>
+          <br>
+          <h4>Wireframe View</h4>
+          <img src="pictures/as3/image_19.png" width="500px" height="500px">
+          <div class="description"> This image shows an airboat with triangular tessellation in wireframe mode </div>
+
+          <br>
+          <h4>Smooth Shading</h4>
+          <img src="pictures/as3/image_20.png" width="500px" height="500px">
+          <div class="description"> This image shows an airboat with triangular tessellation with smooth shading </div>
+          <br>
+
+          <h1>Reading a Sandal obj file</h1>
+          <h3>Command: ./as3 ../inputfiles/sandal.obj</h3>
+          <br>
+          <h4>Wireframe View</h4>
+          <img src="pictures/as3/image_21.png" width="500px" height="500px">
+          <div class="description"> This image shows an sandal with triangular tessellation in wireframe mode </div>
+          <br>
+          <h4>Smooth Shading</h4>
+          <img src="pictures/as3/image_22.png" width="500px" height="500px">
+          <div class="description"> This image shows an sandal with traingular tessellation with smooth shading </div>
+          <br>
+          <br><br><a href="assignment3.html"> [Back to top] </a>
+        </div>
+
+        <a name="animation"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Animation of rotation, translation, zooming, and changing modes</h1>
+          <br>
+          <h3>Command: ./as3 ../inputfiles/teapot.bez 0.01 -a</h3>
+          <video controls="controls" width="800" height="600" src="pictures/as3/image_23.mov"></video>
+          <div class="description"> This video shows our features of rotations, translations, zooming, and toggling of wireframe/shading modes </div>
+          <br>
+
+          <h1>AIRPLANE!!!</h1>
+          <br>
+          <h3>Command: ./as3 ../inputfiles/cessna.obj</h3>
+          <h3>(Manually changed light to make it look better)</h3>
+          <video controls="controls" width="800" height="600" src="pictures/as3/image_24.mov"></video>
+          <div class="description"> This video shows a cool animation of an obj file </div>
+          <br>
+          <br> <br><a href="assignment3.html"> [Back to top] </a>
+        </div>
+
+        <a name="morph"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Morphing a Teacup to an Arch using Algorithm 1</h1>
+          <br>
+          <h3>Command: ./as3 ../inputfiles/teacup.bez 0.1 -ma ../inputfiles/arch.bez</h3>
+          <video controls="controls" width="800" height="600" src="pictures/as3/image_25.mov"></video>
+          <div class="description"> This video shows our extra features of morphing, mapping patch centroids to the nearest point</div>
+          <br>
+
+          <h1>Morphing a Teapot to an Arch using Algorithm 2</h1>
+          <br>
+          <h3>Command: ./as3 ../inputfiles/teapot.bez 0.1 -mc ../inputfiles/arch.bez</h3>
+          <video controls="controls" width="800" height="600" src="pictures/as3/image_26.mov"></video>
+          <div class="description"> This video shows our extra features of morphing, using distance based on relative distance to center of patch centroids</div>
+          <br>
+          <br> <br><a href="assignment3.html"> [Back to top] </a>
+        </div>
+
+        <a name="multi"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Multiple objects created</h1>
+          <br>
+          <h3>Command: ./as3 ../inputfiles/teapot.bez 0.01 -a -s 3 ../inputfiles/teacup.bez ../inputfiles/arch.bez ../inputfiles/gourd.obj</h3>
+          <video controls="controls" width="800" height="600" src="pictures/as3/image_27.mov"></video>
+          <div class="description"> This video shows our extra features of being able to load up multiple objects and switch between them. Click 'L' to go the next object and 'J' to go to the previous one</div>
+          <br>
+          <br> <br><a href="assignment3.html"> [Back to top] </a>
+        </div>
+
+        <a name="write_obj"></a>
+        <div>
+          <h1>Writing to an obj file</h1>
+          <br>
+          <h3>Command: ./as3 ../inputfiles/teacup.bez 0.05 -a -w</h3>
+          <img src="pictures/as3/image_28.png" width="500px" height="500px">
+          <img src="pictures/as3/image_29.png" width="500px" height="500px">
+          <div class="description"> We also added capability to write out bez files to obj files. <a href="as3files/adaptive.obj"> Here </a> is a link to an example output obj file from the above picture, and the second picture shows rendering the .obj file we created.</div>
+          <br>
+          <br> <br><a href="assignment3.html"> [Back to top] </a>
+        </div>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

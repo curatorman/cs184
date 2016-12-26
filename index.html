@@ -1,24 +1,88 @@
-<!DOCTYPE HTML>
-<head>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Open+Sans:400,700" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src = "assets/js/script.js"></script>
-</head>
-<body>
-	<div id="index_background">
-		<div id="as1_image"><a href="as2.html"><img class="index_image" src="assets/img/as0_image.jpg"></a></div>
-		<div id="as2_image"><a href="as1.html"><img class="index_image" src="assets/img/as1_image.jpg"></a></div>
-		<div id="as3_image"><a href="as2.html"><img class="index_image" src="assets/img/as2_image.jpg"></a></div>
-		<div id="as4_image"><a href="as3.html"><img class="index_image" src="assets/img/as3_image.png"></a></div>
-		<div class="title_box">
-			<div id="index_title">
-				Welcome to Favian's
-			</div>
-			<div id="index_title2">
-				CS 184 Page
-			</div>
-			<div is="direct_box"> <a id="direct" href="main.html">Continue</a></div>
-		</div>
-	</div>
-</body>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="CS184 Website">
+    <meta name="author" content="Favian Ho">
+
+    <!-- Insert Favicon later -->
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>Favian Ho</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Favian Ho</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="assignment0.html">Assignment 0</a></li>
+            <li><a href="assignment1.html">Assignment 1</a></li>
+            <li><a href="assignment2.html">Assignment 2</a></li>
+            <li><a href="assignment3.html">Assignment 3</a></li>
+            <li><a href="assignment4.html">Assignment 4</a></li>
+            <!-- <li><a href="#Projects">Projects</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Welcome to Favian's CS184 Website! </h1>
+        <br>
+        <img src="pictures/favian.jpg" alt="Favian Ho" border="5" style="width:228px;height:228px;"> 
+        <br>
+        <br>
+        <p class="lead">My name is Favian Ho. You can contact me at favianho [AT] berkeley [DOT] edu. I enjoy coding and playing basketball!</p>
+        <b> </b>
+      </div>
+
+      <div class="starter-template">
+        <h1>Here is a list of projects I have done for CS184! </h1>
+        <br>
+
+        <ul class="list-group">
+          <li class="list-group-item"><a href="assignment0.html">Assignment 0: Drawing my name with OpenGL</a></li>
+          <li class="list-group-item"><a href="assignment1.html">Assignment 1: Shading</a></li>
+          <li class="list-group-item"><a href="assignment2.html">Assignment 2: Ray Tracer</a></li>
+          <li class="list-group-item"><a href="assignment3.html">Assignment 3: Bezier Surfaces</a></li>
+          <li class="list-group-item"><a href="assignment4.html">Assignment 4: Inverse Kinematics</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

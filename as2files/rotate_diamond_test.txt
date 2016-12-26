@@ -1,0 +1,7 @@
+cam 0 2 5 -3 -3 3 3 -3 3 -3 3 3 3 3 3
+tim 300
+ltd 1 -1 -1 1 0 1
+ani 0 0 5 0 0 0
+obj ../src/objs/diamond.obj
+ast
+pla 0 -2 -2 0 1 .08

@@ -1,0 +1,16 @@
+.image_title{
+	font-weight: bold;
+	font-size: 36px;
+}
+
+.description{
+	margin: auto; 
+	width: 60%; 
+	text-align: left;
+	font-size: 20px;
+}
+
+.cmd_line{
+	margin-top: 20px;
+	font-size: 20px;
+}

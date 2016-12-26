@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="CS184 Website">
+    <meta name="author" content="Favian Ho">
+
+    <!-- Insert Favicon later -->
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>Favian Ho</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Favian Ho</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="assignment0.html">Assignment 0</a></li>
+            <li class="active"><a href="assignment1.html">Assignment 1</a></li>
+            <li><a href="assignment2.html">Assignment 2</a></li>
+            <li><a href="assignment3.html">Assignment 3</a></li>
+            <li><a href="assignment4.html">Assignment 4</a></li>
+            <!-- <li><a href="#Projects">Projects</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <br><br>
+      <h3> Group Members: </h3>
+      <h5> Caleb Chuck (aaf) and Favian Ho (aby)</h5>
+      <h3> Features </h3>
+      <a href="#diff_only"> Diffuse only </a><br>
+      <a href="#spec_dir"> Specular for directional light </a><br>
+      <a href="#spec_pt"> Specular for point light </a><br>
+      <a href="#comb"> Combined specular and diffuse</a><br>
+      <a href="#anis_spec"> Anisotropic specularity</a><br>
+      <a href="#multi"> Multiple light sources</a><br>
+      <a href="#curs_light"> Cursor Light</a><br>
+      <a href="#curs_click"> Cursor Click</a><br>
+      <a href="#show_lights"> Show Lights</a><br>
+      <a href="#multi_spheres"> Multiple Spheres</a><br>
+      <a href="#toon"> Toon Shading</a><br>
+      <a href="#twinkling"> Twinkling</a><br>
+      <a href="#rotation"> Rotation</a><br>
+      <a href="#tetrahedron"> Tetrahedron</a><br>
+      <a href="#ashik"> Ashikhmin-Shirley</a><br>
+      <a href="#cool"> Cool Stuff!</a><br>
+ <!--      <a href="#comb"> Combined specular and diffuse</a><br>
+      <a href="#comb"> Combined specular and diffuse</a><br>
+      <a href="#comb"> Combined specular and diffuse</a><br>
+      <a href="#comb"> Combined specular and diffuse</a><br> -->
+
+
+      <div class="starter-template">
+
+        <a name="diff_only"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Diffuse only shading from a single light source</h1>
+          <h4>[Directional Light]</h4>
+          <img src="pictures/as1/diff_dir.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks 0 0 0 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1</div>
+          <div class="description"> This image shows a sphere and a single directional light with only the diffuse component </div>
+
+          <h4>[Point Light]</h4>
+          <img src="pictures/as1/diff_pt.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks 0 0 0 -ka 0 0 0 -sp 2 -pl 1 1 1 1 1 1</div>
+          <div class="description"> This image shows a sphere and a single point light with only the diffuse component </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="spec_dir"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Specular only shading from a single directional light source</h1>
+          <img src="pictures/as1/spec_dir.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -ks .5 .5 .5 -kd 0 0 0 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1</div>
+          <div class="description"> This image shows a sphere and a single directional light with only the specular component </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="spec_pt"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Specular only shading from a single point light source</h1>
+          <img src="pictures/as1/spec_pt.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -ks .5 .5 .5 -kd 0 0 0 -ka 0 0 0 -sp 2 -pl 1 1 1 1 1 1</div>
+          <div class="description">This image shows a sphere and a single directional light with only the specular component </div>
+          <br> <br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="comb"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Combined specular and diffuse shading</h1>
+          <h4>[Directional Light]</h4>
+          <img src="pictures/as1/comb_dir.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1</div>
+          <div class="description"> This image shows a sphere and a single directional light with both the diffuse and specular components </div>
+
+          <h4>[Point Light]</h4>
+          <img src="pictures/as1/comb_pt.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka 0 0 0 -sp 2 -pl 1 1 1 1 1 1</div>
+          <div class="description"> This image shows a sphere and a single point light with both the diffuse and specular components </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="anis_spec"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Anisotropic specularity</h1>
+           <img src="pictures/as1/anis_u.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1 -pl 1 0 1 1 0 0 -spu 100 -spv 10</div>
+          <div class="description"> This image shows a sphere with anisotropic shading with u greater than v  </div>
+          <img src="pictures/as1/anis_v.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1 -pl 1 0 1 1 0 0 -spu 10 -spv 100</div>
+          <div class="description"> This image shows a sphere with anisotropic shading with v greater than u </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="multi"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Multiple light sources</h1>
+          <img src="pictures/as1/multi_light.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1 -pl 1 0 1 1 0 0</div>
+          <div class="description"> This image shows a sphere with a single white directional light in the (-1, -1, -1) direction and a single red point light at (1, 0, 1) </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="curs_light"></a>
+        <div>
+          <h1>Cursor Light</h1>
+          <video controls="controls" width="800" height="600" src="pictures/as1/cursor_light.mov"></video>
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka 0 0 0 -sp 2 -cl 0 1 1</div>
+          <div class="description"> This video shows a feature in which the cursor acts as a point light. As we move the cursor, we can see the shading effect of the point light from various locations. </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="curs_click"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Cursor Click</h1>
+          <video controls="controls" width="800" height="600" src="pictures/as1/cursor_click.mov"></video>
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka .1 .1 .1 -sp 2 -dl -1 -1 -1 1 1 1 -cc</div>
+          <div class="description"> This video shows a feature where each time we click the cursor, we place a randomly colored point light. </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="show_lights"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Show Lights</h1>
+          <video controls="controls" width="800" height="600" src="pictures/as1/show_lights.mov"></video>
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .2 .2 .2 -ks .2 .2 .2 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1 -sl -cl 0 1 1 -cc</div>
+          <div class="description"> This video shows a feature that allows us to see where each point light is. Each point light that is within the frame is represented as a dot, which has the color of whatever the light source's color is. </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="multi_spheres"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Multiple Spheres</h1>
+          <img src="pictures/as1/multi_spheres.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1 -pl 0 0 0 0 1 1 -s -0.5 .5 0 .2 -s -.5 -.5 0 .2 -s .5 .5 0 .2 -s .5 -.5 0 .2</div>
+          <div class="description"> This image shows the capability of having multiple spheres that can interact with the lights. </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="toon"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Toon Shading</h1>
+          <img src="pictures/as1/toon.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1 -pl 1 0 1 1 0 0 -ts</div>
+          <div class="description"> This image shows a version of toon shading. </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="twinkling"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Twinkling</h1>
+          <video controls="controls" width="800" height="600" src="pictures/as1/twinkling.mov"></video>
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .3 .3 .3 -ks .3 .3 .3 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1 -cc -sl -tw -cl 0 1 1</div>
+          <div class="description"> This video shows a twinkling lights, which is a feature that, if turned on, will make it so that all lights generated from cursor clicks will twinkle and change colors periodically. </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="rotation"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Rotations</h1>
+          <video controls="controls" width="800" height="600" src="pictures/as1/rotation.mov"></video>
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1 -s -.5 0 0 .2 -s -0.3 0.3 0 .1 -r -sl -cl 1 0 1</div>
+          <div class="description"> This video shows rotations. When this feature is turned on, all the spheres will rotate counterclockwise around the middle point of the screen. </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="tetrahedron"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Tetrahedron</h1>
+          <img src="pictures/as1/tetrahedron.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -sp 2 -ka 0 0 0 -pl .9 .9 .9 1 0 0 -sl -cl 0 0 0 -spu 10 -spv 10 -pl -9 0 .9 0 1 1 -pl 0 -.9 0 0 .5 0 -tet .4 -.4 3 -.7 -.7 .7 -.6 .6 .7 -s -.5 -.5 0 .3</div>
+          <div class="description"> This image shows a feature we added that allows us to also have tetrahedrons with shading in addition to the spheres we already have. </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+        <a name="ashik"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Ashikhmin-Shirley</h1>
+          <img src="pictures/as1/ashik.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka 0 0 0 -sp 2 -pl 1.1 0 1 1 0 0 -spu 10 -spv 20 -sl -asm -pl -2 1 3 0 1 1</div>
+          <div class="description"> This image shows an example of Ashikhmin-Shirley. </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+        <a name="cool"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Rotations, Toon Shading, and Multiple Spheres!</h1>
+          <video controls="controls" width="800" height="600" src="pictures/as1/cool.mov"></video>
+          <div class="cmd_line"> Command-line invocation: ./as1 -kd .5 .5 .5 -ks .5 .5 .5 -ka 0 0 0 -sp 2 -dl -1 -1 -1 1 1 1 -pl 0 0 0 0 1 1 -s -0.5 .5 0 .2 -s -.5 -.5 0 .2 -s .5 .5 0 .2 -s .5 -.5 0 .2 -r -ts</div>
+          <div class="description"> A cool combination of our features! </div>
+          <br><br><a href="assignment1.html"> [Back to top] </a>
+        </div>
+
+
+
+
+      </div>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

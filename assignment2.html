@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="CS184 Website">
+    <meta name="author" content="Favian Ho">
+
+    <!-- Insert Favicon later -->
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>Favian Ho</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Favian Ho</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="assignment0.html">Assignment 0</a></li>
+            <li><a href="assignment1.html">Assignment 1</a></li>
+            <li class="active"><a href="assignment2.html">Assignment 2</a></li>
+            <li><a href="assignment3.html">Assignment 3</a></li>
+            <li><a href="assignment4.html">Assignment 4</a></li>
+            <!-- <li><a href="#Projects">Projects</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <br><br>
+      <h1> Assignment 2: Ray Tracer </h1>
+      <h3> Unless specified, the time to render each image was < 2 seconds </h3>
+      <h3> All command line invocations were simply ./as2, and we manually toggled on and off tests that we made in test.cpp</h3>
+      <h3> Animations were created by generating multiple images and then manually putting them together to create videos</h3>
+      <h3> Group Members: </h3>
+      <h5> Caleb Chuck (aaf) and Favian Ho (aby)</h5>
+      <h3> Features </h3>
+      <a href="#sphere_light"> Sphere with Light </a><br>
+      <a href="#triangle_light"> Triangle with Light </a><br>
+      <a href="#shadows"> Shadows </a><br>
+      <a href="#reflection"> Reflection</a><br>
+      <a href="#obj"> Reading obj files</a><br>
+      <a href="#polygons"> Polygons</a><br>
+      <a href="#transformations"> Linear Transformations</a><br>
+      <a href="#planes"> Planes</a><br>
+      <a href="#tex_sphere"> Texture Mapping for Spheres</a><br>
+      <a href="#tex_plane"> Texture Mapping for Planes</a><br>
+      <a href="#tex_tri"> Texture Mapping for Triangles</a><br>
+      <a href="#bump"> Bump Map</a><br>
+      <a href="#animation"> Animation</a><br>
+      <a href="#rect_lights"> Area Lights</a><br>
+
+ <!--      <a href="#comb"> Combined specular and diffuse</a><br>
+      <a href="#comb"> Combined specular and diffuse</a><br>
+      <a href="#comb"> Combined specular and diffuse</a><br>
+      <a href="#comb"> Combined specular and diffuse</a><br> -->
+
+
+      <div class="starter-template">
+
+        <a name="sphere_light"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Sphere with a Single Light Source</h1>
+          <h4>[Directional Light]</h4>
+          <img src="pictures/as2/test_sphere_dirlight.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/sphere_with_dirlight_test.txt"> Here </a> </div>
+          <div class="description"> This image shows a sphere and a single directional light </div>
+
+          <h4>[Point Light]</h4>
+          <img src="pictures/as2/test_sphere_ptlight.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/sphere_with_ptlight_test.txt"> Here </a> </div>
+          <div class="description"> This image shows a sphere and a single point light</div>
+          <br><br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <a name="sphere_ambient"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Ambient light test</h1>
+          <h4>[ambient Light]</h4>
+          <img src="pictures/as2/simple_ambient_test.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/ambient_test.txt"> Here </a> </div>
+          <div class="description"> This image shows a sphere with an ambeint light </div>
+        </div>
+
+        <a name="OrthoView"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Orthographic view test</h1>
+          <h4>[Orthographic]</h4>
+          <img src="pictures/as2/test_small_sphere.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/small_sphere_test.txt"> Here </a> </div>
+          <div class="description"> A sphere using an orthographic view (only ray hits are shown) </div>
+        </div>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Orthographic view test (perspective)</h1>
+          <h4>[perspective]</h4>
+          <img src="pictures/as2/test_small_sphere_per.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/small_sphere_per_test.txt"> Here </a> </div>
+          <div class="description"> The same sphere using a perspective view (only ray hits are shown) </div>
+        </div>
+
+        <a name="triangle_light"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Triangle with a Single Light Source</h1>
+          <h4>[Directional Light]</h4>
+          <img src="pictures/as2/test_triangle_dirlight.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/triangle_with_dirlight_test.txt"> Here </a> </div>
+          <div class="description"> This image shows a triangle and a single directional light </div>
+
+          <h4>[Point Light]</h4>
+          <img src="pictures/as2/test_triangle_ptlight.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/triangle_with_ptlight_test.txt"> Here </a> </div>
+          <div class="description"> This image shows a triangle and a single point light</div>
+          <br><br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <a name="shadows"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Shadow test</h1>
+          <img src="pictures/as2/test_simple_shadow.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/simple_shadow_test.txt"> Here </a> </div>
+          <div class="description">This image shows an example of how shadows work with a sphere and a plane (extra feature) </div>
+          <img src="pictures/as2/test_simple_shadow2.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/simple_shadow_test2.txt"> Here </a> </div>
+          <div class="description">This image shows an example of how shadows work with multiple spheres and a plane (extra feature) </div>
+          <br> <br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <a name="reflection"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Reflections</h1>
+          <img src="pictures/as2/test_big.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/big_test.txt"> Here </a> </div>
+          <div class="description">This image shows an multiple shapes in space and their reflections </div>
+          <div class="description">Time to run: about 5 seconds</div>
+        </div>
+
+        <a name="obj"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Reading obj Files</h1>
+           <img src="pictures/as2/test_simple_obj2.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/simple_obj_test2.txt"> Here </a> </div>
+          <div class="cmd_line"> obj file: <a href="as2files/diamond.obj"> Here </a> </div>
+          <div class="description">This image shows reading a simple obj file that makes a diamond shape. </div>
+          <div class="description">Time to run: about 10 seconds</div>
+          <br>
+           <img src="pictures/as2/test_simple_obj.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/simple_obj_test.txt"> Here </a> </div>
+          <div class="cmd_line"> obj file: <a href="as2files/gourd.obj"> Here </a> </div>
+          <div class="description">This image shows reading an obj file that creates the picture of a gourd. (Used Gary Hoang's scene but added extra features) </div>
+          <div class="description">Time to run: about 5 minutes</div>
+          <br><br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <a name="polygons"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Polygons</h1>
+          <img src="pictures/as2/test_simple_polygons.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/simple_polygons_test.txt"> Here </a> </div>
+          <div class="description">This image shows the construction of a basic polygon. The polygon was created manually in the code. </div>
+          <br><br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <a name="transformations"></a>
+        <div>
+          <h1>Transformations</h1>
+          <img src="pictures/as2/test_small_transforms.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/small_transforms_test.txt"> Here </a> </div>
+          <div class="description">This image shows a basic transformations of a sphere. </div>
+          <br>
+          <img src="pictures/as2/test_big_transforms.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/big_transforms_test.txt"> Here </a> </div>
+          <div class="description">This images shows multiple transformations of multiple spheres. </div>
+          <div class="description">Time to run: about 3 minutes</div>
+          <br><br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <a name="planes"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Planes</h1>
+          <img src="pictures/as2/test_simple_material.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/simple_materials_test.txt"> Here </a> </div>
+          <div class="description">This image shows the new feature we implemented that allows us to have planes. It makes our pictures much nicer since you can see the shadow and reflection of objects on the plane. </div>
+          <div class="description">Time to run: about 5 seconds</div>
+          <a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <h3> For the following texture maps, we used this pattern we found online</h3>
+        <img src="pictures/as2/pattern.jpg" width="500px" height="500px">
+
+        <a name="tex_sphere"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Texture Maps for Spheres</h1>
+          <img src="pictures/as2/test_plane_map2.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/plane_map_test.txt"> Here </a> </div>
+          <div class="description">This image demonstrates the extra feature for texture maps on spheres. </div>
+          <br><br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <a name="tex_plane"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Texture Maps for Planes</h1>
+          <img src="pictures/as2/test_plane_map.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/plane_map_test.txt"> Here </a> </div>
+          <div class="description">This image demonstrates the extra feature for texture maps on planes.
+          <br><br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <a name="tex_tri"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Texture Maps for Triangles</h1>
+          <img src="pictures/as2/test_plane_map3.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/plane_map_test.txt"> Here </a> </div>
+          <div class="description">This image demonstrates the extra feature for texture maps on triangles.
+          <br><br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <a name="bump"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Bump Maps for Planes</h1>
+          <img src="pictures/as2/bump_map.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/plane_map_test.txt"> Here </a> </div>
+          <div class="description">This image demonstrates the extra feature for bump maps for planes.
+          <br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <a name="animation"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Rotating Lights</h1>
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/Z1eplZFM878" frameborder="0" allowfullscreen></iframe> 
+          <div class="cmd_line"> Input file: <a href="as2files/rotate_light_test.txt"> Here </a> </div>
+          <div class="description">This video demonstrates an animation of a rotating light.</div>
+          <div class="description">Time to run: about 3 minutes</div>
+          <br>
+          <h1>Rotating Planes</h1>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/3pElHLtb4ow" frameborder="0" allowfullscreen></iframe>
+          <div class="cmd_line"> Input file: <a href="as2files/rotate_plane_test.txt"> Here </a> </div>
+          <div class="description">This video demonstrates an animation of a rotating plane.</div>
+          <div class="description">Time to run: about 3 minutes</div>
+          <br>
+          <h1>Rotating Spheres</h1>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/NgrbGkaIGAI" frameborder="0" allowfullscreen></iframe>
+          <div class="cmd_line"> Input file: <a href="as2files/rotate_sphere_test.txt"> Here </a> </div>
+          <div class="description">This video demonstrates an animation of a rotating sphere.</div>
+          <div class="description">Time to run: about 3 minutes</div>
+          <br>
+          <h1>Translating Sphere</h1>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/J6pEKDtIkYo" frameborder="0" allowfullscreen></iframe>
+          <div class="cmd_line"> Input file: <a href="as2files/translate_sphere_test.txt"> Here </a> </div>
+          <div class="description">This video demonstrates an animation of a translating sphere.</div>
+          <div class="description">Time to run: about 3 minutes</div>
+          <br>
+          <h1>Translating Lights</h1>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/cvTaKulRGwQ" frameborder="0" allowfullscreen></iframe>
+          <div class="cmd_line"> Input file: <a href="as2files/translate_light_test.txt"> Here </a> </div>
+          <div class="description">This video demonstrates an animation of a translating light.</div>
+          <div class="description">Time to run: about 3 minutes</div>
+          <br>
+          <h1>Rotating Objects</h1>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/WUPevOJEh58" Eframeborder="0" allowfullscreen></iframe>
+          <div class="cmd_line"> Input file: <a href="as2files/rotate_diamond_test.txt"> Here </a> </div>
+          <div class="description">This video demonstrates an animation of a rotating diamond, where the diamond was from an obj file!</div>
+          <div class="description">Time to run: about 3 minutes</div>
+          <br><br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+
+        <a name="rect_lights"></a>
+        <div style="padding-top:50px; margin-top: -50px">
+          <h1>Area Lights</h1>
+          <img src="pictures/as2/test_simple_rectlight.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/simple_rectlight_test.txt"> Here </a> </div>
+          <div class="description">This image demonstrates the extra feature that creates area lights, which will also result in soft shadows. We created a scene that makes it look like there is a ball on the floor in a room. </div>
+          <div class="description">Time to run: about 3 minutes</div>
+          <h1>Texture Mapping for Area Lights</h1>
+          <img src="pictures/as2/test_map_rectlight.jpg" width="500px" height="500px">
+          <div class="cmd_line"> Input file: <a href="as2files/simple_rectlight_test.txt"> Here </a> </div>
+          <div class="description">This image demonstrates texture maps applied to area lights. We placed the same pattern as before on the light above to create a cool looking area light.
+          <div class="description">Time to run: about 3 minutes</div>
+          <br><br><a href="assignment2.html"> [Back to top] </a>
+        </div>
+      </div>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
